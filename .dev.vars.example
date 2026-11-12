@@ -1,0 +1,7 @@
+# Copy to .dev.vars for `npm run cf:dev` (wrangler's local mode). Never commit .dev.vars.
+# Generate real values with: npm run secrets
+PIN_PEPPER=change-me-to-a-long-random-string
+SETUP_CODE=change-me
+VAPID_PUBLIC_KEY=
+VAPID_PRIVATE_JWK=
+VAPID_SUBJECT=mailto:you@example.com

@@ -1,0 +1,17 @@
+node_modules/
+web/dist/
+data/
+.wrangler/
+.dev.vars
+.DS_Store
+.idea/
+.vscode/
+*.log
+
+.secrets.json
+make-secrets.mjs
+.dev.vars
+.wrangler/
+data/
+web/dist/
+node_modules/

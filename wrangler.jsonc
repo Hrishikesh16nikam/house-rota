@@ -1,0 +1,28 @@
+{
+  // Cloudflare Workers config. See DEPLOY.md for the step-by-step setup.
+  "name": "house-rota",
+  "main": "src/worker.ts",
+  "compatibility_date": "2026-10-01",
+
+  // The React app, served by Workers Static Assets (free). Only /api/* runs code.
+  "assets": {
+    "directory": "./web/dist",
+    "not_found_handling": "single-page-application",
+    "run_worker_first": ["/api/*"]
+  },
+
+  // Free SQLite database. Replace database_id with the one `npm run cf:db:create` prints.
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "house-rota",
+      "database_id": "434c989a-08e3-4a14-96e4-c96f82374af1",
+      "migrations_dir": "migrations"
+    }
+  ],
+
+  // Reminders and deadlines are checked every 15 minutes.
+  "triggers": { "crons": ["*/15 * * * *"] },
+
+  "observability": { "enabled": true }
+}
